@@ -1,0 +1,6 @@
+venv\Scripts\activate
+
+python manage.py runserver
+
+
+npm run docs-serve  : bootstrap

@@ -1,0 +1,6 @@
+Django==6.0.3
+djangorestframework==3.16.1
+python-dotenv==1.1.1
+numpy>=1.26,<3
+scikit-learn>=1.5,<2
+joblib>=1.4,<2

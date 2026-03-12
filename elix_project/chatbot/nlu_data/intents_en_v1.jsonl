@@ -1,0 +1,360 @@
+{"text": "show me project e-commerce platform", "intent": "search_project"}
+{"text": "show me project mobile banking app", "intent": "search_project"}
+{"text": "show me project customer portal redesign", "intent": "search_project"}
+{"text": "show me project marketing automation", "intent": "search_project"}
+{"text": "find project e-commerce platform", "intent": "search_project"}
+{"text": "find project mobile banking app", "intent": "search_project"}
+{"text": "find project customer portal redesign", "intent": "search_project"}
+{"text": "find project marketing automation", "intent": "search_project"}
+{"text": "search for e-commerce platform", "intent": "search_project"}
+{"text": "search for mobile banking app", "intent": "search_project"}
+{"text": "search for customer portal redesign", "intent": "search_project"}
+{"text": "search for marketing automation", "intent": "search_project"}
+{"text": "tell me about e-commerce platform", "intent": "search_project"}
+{"text": "tell me about mobile banking app", "intent": "search_project"}
+{"text": "tell me about customer portal redesign", "intent": "search_project"}
+{"text": "tell me about marketing automation", "intent": "search_project"}
+{"text": "give details for project e-commerce platform", "intent": "search_project"}
+{"text": "give details for project mobile banking app", "intent": "search_project"}
+{"text": "give details for project customer portal redesign", "intent": "search_project"}
+{"text": "give details for project marketing automation", "intent": "search_project"}
+{"text": "i need info about e-commerce platform", "intent": "search_project"}
+{"text": "i need info about mobile banking app", "intent": "search_project"}
+{"text": "i need info about customer portal redesign", "intent": "search_project"}
+{"text": "i need info about marketing automation", "intent": "search_project"}
+{"text": "lookup e-commerce platform project", "intent": "search_project"}
+{"text": "lookup mobile banking app project", "intent": "search_project"}
+{"text": "lookup customer portal redesign project", "intent": "search_project"}
+{"text": "lookup marketing automation project", "intent": "search_project"}
+{"text": "get project status for e-commerce platform", "intent": "search_project"}
+{"text": "get project status for mobile banking app", "intent": "search_project"}
+{"text": "get project status for customer portal redesign", "intent": "search_project"}
+{"text": "get project status for marketing automation", "intent": "search_project"}
+{"text": "open project e-commerce platform", "intent": "search_project"}
+{"text": "open project mobile banking app", "intent": "search_project"}
+{"text": "open project customer portal redesign", "intent": "search_project"}
+{"text": "open project marketing automation", "intent": "search_project"}
+{"text": "what is happening with e-commerce platform", "intent": "search_project"}
+{"text": "what is happening with mobile banking app", "intent": "search_project"}
+{"text": "what is happening with customer portal redesign", "intent": "search_project"}
+{"text": "what is happening with marketing automation", "intent": "search_project"}
+{"text": "list all projects", "intent": "list_projects"}
+{"text": "list all projects please", "intent": "list_projects"}
+{"text": "list all projects right now", "intent": "list_projects"}
+{"text": "list all projects for me", "intent": "list_projects"}
+{"text": "show all projects", "intent": "list_projects"}
+{"text": "show all projects please", "intent": "list_projects"}
+{"text": "show all projects right now", "intent": "list_projects"}
+{"text": "show all projects for me", "intent": "list_projects"}
+{"text": "what projects do we have", "intent": "list_projects"}
+{"text": "what projects do we have please", "intent": "list_projects"}
+{"text": "what projects do we have right now", "intent": "list_projects"}
+{"text": "what projects do we have for me", "intent": "list_projects"}
+{"text": "display project list", "intent": "list_projects"}
+{"text": "display project list please", "intent": "list_projects"}
+{"text": "display project list right now", "intent": "list_projects"}
+{"text": "display project list for me", "intent": "list_projects"}
+{"text": "can you list projects", "intent": "list_projects"}
+{"text": "can you list projects please", "intent": "list_projects"}
+{"text": "can you list projects right now", "intent": "list_projects"}
+{"text": "can you list projects for me", "intent": "list_projects"}
+{"text": "give me all projects", "intent": "list_projects"}
+{"text": "give me all projects please", "intent": "list_projects"}
+{"text": "give me all projects right now", "intent": "list_projects"}
+{"text": "give me all projects for me", "intent": "list_projects"}
+{"text": "project catalog please", "intent": "list_projects"}
+{"text": "project catalog please please", "intent": "list_projects"}
+{"text": "project catalog please right now", "intent": "list_projects"}
+{"text": "project catalog please for me", "intent": "list_projects"}
+{"text": "i want the full project list", "intent": "list_projects"}
+{"text": "i want the full project list please", "intent": "list_projects"}
+{"text": "i want the full project list right now", "intent": "list_projects"}
+{"text": "i want the full project list for me", "intent": "list_projects"}
+{"text": "show every project", "intent": "list_projects"}
+{"text": "show every project please", "intent": "list_projects"}
+{"text": "show every project right now", "intent": "list_projects"}
+{"text": "show every project for me", "intent": "list_projects"}
+{"text": "list projects now", "intent": "list_projects"}
+{"text": "list projects now please", "intent": "list_projects"}
+{"text": "list projects now right now", "intent": "list_projects"}
+{"text": "list projects now for me", "intent": "list_projects"}
+{"text": "generate report for e-commerce platform", "intent": "generate_report"}
+{"text": "generate report for mobile banking app", "intent": "generate_report"}
+{"text": "generate report for customer portal redesign", "intent": "generate_report"}
+{"text": "generate report for marketing automation", "intent": "generate_report"}
+{"text": "create project summary for e-commerce platform", "intent": "generate_report"}
+{"text": "create project summary for mobile banking app", "intent": "generate_report"}
+{"text": "create project summary for customer portal redesign", "intent": "generate_report"}
+{"text": "create project summary for marketing automation", "intent": "generate_report"}
+{"text": "full details for e-commerce platform", "intent": "generate_report"}
+{"text": "full details for mobile banking app", "intent": "generate_report"}
+{"text": "full details for customer portal redesign", "intent": "generate_report"}
+{"text": "full details for marketing automation", "intent": "generate_report"}
+{"text": "build report about e-commerce platform", "intent": "generate_report"}
+{"text": "build report about mobile banking app", "intent": "generate_report"}
+{"text": "build report about customer portal redesign", "intent": "generate_report"}
+{"text": "build report about marketing automation", "intent": "generate_report"}
+{"text": "i need a report on e-commerce platform", "intent": "generate_report"}
+{"text": "i need a report on mobile banking app", "intent": "generate_report"}
+{"text": "i need a report on customer portal redesign", "intent": "generate_report"}
+{"text": "i need a report on marketing automation", "intent": "generate_report"}
+{"text": "make a project report for e-commerce platform", "intent": "generate_report"}
+{"text": "make a project report for mobile banking app", "intent": "generate_report"}
+{"text": "make a project report for customer portal redesign", "intent": "generate_report"}
+{"text": "make a project report for marketing automation", "intent": "generate_report"}
+{"text": "prepare summary for e-commerce platform", "intent": "generate_report"}
+{"text": "prepare summary for mobile banking app", "intent": "generate_report"}
+{"text": "prepare summary for customer portal redesign", "intent": "generate_report"}
+{"text": "prepare summary for marketing automation", "intent": "generate_report"}
+{"text": "report for project e-commerce platform", "intent": "generate_report"}
+{"text": "report for project mobile banking app", "intent": "generate_report"}
+{"text": "report for project customer portal redesign", "intent": "generate_report"}
+{"text": "report for project marketing automation", "intent": "generate_report"}
+{"text": "generate detailed report for e-commerce platform", "intent": "generate_report"}
+{"text": "generate detailed report for mobile banking app", "intent": "generate_report"}
+{"text": "generate detailed report for customer portal redesign", "intent": "generate_report"}
+{"text": "generate detailed report for marketing automation", "intent": "generate_report"}
+{"text": "give me the report for e-commerce platform", "intent": "generate_report"}
+{"text": "give me the report for mobile banking app", "intent": "generate_report"}
+{"text": "give me the report for customer portal redesign", "intent": "generate_report"}
+{"text": "give me the report for marketing automation", "intent": "generate_report"}
+{"text": "check project status", "intent": "check_status"}
+{"text": "check project status please", "intent": "check_status"}
+{"text": "check project status today", "intent": "check_status"}
+{"text": "check project status now", "intent": "check_status"}
+{"text": "show active projects status", "intent": "check_status"}
+{"text": "show active projects status please", "intent": "check_status"}
+{"text": "show active projects status today", "intent": "check_status"}
+{"text": "show active projects status now", "intent": "check_status"}
+{"text": "how is project progress", "intent": "check_status"}
+{"text": "how is project progress please", "intent": "check_status"}
+{"text": "how is project progress today", "intent": "check_status"}
+{"text": "how is project progress now", "intent": "check_status"}
+{"text": "give me progress overview", "intent": "check_status"}
+{"text": "give me progress overview please", "intent": "check_status"}
+{"text": "give me progress overview today", "intent": "check_status"}
+{"text": "give me progress overview now", "intent": "check_status"}
+{"text": "status update for active projects", "intent": "check_status"}
+{"text": "status update for active projects please", "intent": "check_status"}
+{"text": "status update for active projects today", "intent": "check_status"}
+{"text": "status update for active projects now", "intent": "check_status"}
+{"text": "where do we stand on projects", "intent": "check_status"}
+{"text": "where do we stand on projects please", "intent": "check_status"}
+{"text": "where do we stand on projects today", "intent": "check_status"}
+{"text": "where do we stand on projects now", "intent": "check_status"}
+{"text": "project progress now", "intent": "check_status"}
+{"text": "project progress now please", "intent": "check_status"}
+{"text": "project progress now today", "intent": "check_status"}
+{"text": "project progress now now", "intent": "check_status"}
+{"text": "show current project status", "intent": "check_status"}
+{"text": "show current project status please", "intent": "check_status"}
+{"text": "show current project status today", "intent": "check_status"}
+{"text": "show current project status now", "intent": "check_status"}
+{"text": "how are our active projects", "intent": "check_status"}
+{"text": "how are our active projects please", "intent": "check_status"}
+{"text": "how are our active projects today", "intent": "check_status"}
+{"text": "how are our active projects now", "intent": "check_status"}
+{"text": "progress report on active work", "intent": "check_status"}
+{"text": "progress report on active work please", "intent": "check_status"}
+{"text": "progress report on active work today", "intent": "check_status"}
+{"text": "progress report on active work now", "intent": "check_status"}
+{"text": "projects by sarah johnson", "intent": "search_by_owner"}
+{"text": "projects by michael chen", "intent": "search_by_owner"}
+{"text": "projects by emily rodriguez", "intent": "search_by_owner"}
+{"text": "projects by david park", "intent": "search_by_owner"}
+{"text": "show projects owned by sarah johnson", "intent": "search_by_owner"}
+{"text": "show projects owned by michael chen", "intent": "search_by_owner"}
+{"text": "show projects owned by emily rodriguez", "intent": "search_by_owner"}
+{"text": "show projects owned by david park", "intent": "search_by_owner"}
+{"text": "owner is sarah johnson", "intent": "search_by_owner"}
+{"text": "owner is michael chen", "intent": "search_by_owner"}
+{"text": "owner is emily rodriguez", "intent": "search_by_owner"}
+{"text": "owner is david park", "intent": "search_by_owner"}
+{"text": "who owns projects for sarah johnson", "intent": "search_by_owner"}
+{"text": "who owns projects for michael chen", "intent": "search_by_owner"}
+{"text": "who owns projects for emily rodriguez", "intent": "search_by_owner"}
+{"text": "who owns projects for david park", "intent": "search_by_owner"}
+{"text": "find work owned by sarah johnson", "intent": "search_by_owner"}
+{"text": "find work owned by michael chen", "intent": "search_by_owner"}
+{"text": "find work owned by emily rodriguez", "intent": "search_by_owner"}
+{"text": "find work owned by david park", "intent": "search_by_owner"}
+{"text": "list projects for owner sarah johnson", "intent": "search_by_owner"}
+{"text": "list projects for owner michael chen", "intent": "search_by_owner"}
+{"text": "list projects for owner emily rodriguez", "intent": "search_by_owner"}
+{"text": "list projects for owner david park", "intent": "search_by_owner"}
+{"text": "give me sarah johnson projects", "intent": "search_by_owner"}
+{"text": "give me michael chen projects", "intent": "search_by_owner"}
+{"text": "give me emily rodriguez projects", "intent": "search_by_owner"}
+{"text": "give me david park projects", "intent": "search_by_owner"}
+{"text": "display projects by sarah johnson", "intent": "search_by_owner"}
+{"text": "display projects by michael chen", "intent": "search_by_owner"}
+{"text": "display projects by emily rodriguez", "intent": "search_by_owner"}
+{"text": "display projects by david park", "intent": "search_by_owner"}
+{"text": "what projects belong to sarah johnson", "intent": "search_by_owner"}
+{"text": "what projects belong to michael chen", "intent": "search_by_owner"}
+{"text": "what projects belong to emily rodriguez", "intent": "search_by_owner"}
+{"text": "what projects belong to david park", "intent": "search_by_owner"}
+{"text": "search projects by sarah johnson", "intent": "search_by_owner"}
+{"text": "search projects by michael chen", "intent": "search_by_owner"}
+{"text": "search projects by emily rodriguez", "intent": "search_by_owner"}
+{"text": "search projects by david park", "intent": "search_by_owner"}
+{"text": "hello", "intent": "greeting"}
+{"text": "hello please", "intent": "greeting"}
+{"text": "hello today", "intent": "greeting"}
+{"text": "hello now", "intent": "greeting"}
+{"text": "hi there", "intent": "greeting"}
+{"text": "hi there please", "intent": "greeting"}
+{"text": "hi there today", "intent": "greeting"}
+{"text": "hi there now", "intent": "greeting"}
+{"text": "hey assistant", "intent": "greeting"}
+{"text": "hey assistant please", "intent": "greeting"}
+{"text": "hey assistant today", "intent": "greeting"}
+{"text": "hey assistant now", "intent": "greeting"}
+{"text": "good morning", "intent": "greeting"}
+{"text": "good morning please", "intent": "greeting"}
+{"text": "good morning today", "intent": "greeting"}
+{"text": "good morning now", "intent": "greeting"}
+{"text": "good afternoon", "intent": "greeting"}
+{"text": "good afternoon please", "intent": "greeting"}
+{"text": "good afternoon today", "intent": "greeting"}
+{"text": "good afternoon now", "intent": "greeting"}
+{"text": "greetings", "intent": "greeting"}
+{"text": "greetings please", "intent": "greeting"}
+{"text": "greetings today", "intent": "greeting"}
+{"text": "greetings now", "intent": "greeting"}
+{"text": "hello bot", "intent": "greeting"}
+{"text": "hello bot please", "intent": "greeting"}
+{"text": "hello bot today", "intent": "greeting"}
+{"text": "hello bot now", "intent": "greeting"}
+{"text": "hi project assistant", "intent": "greeting"}
+{"text": "hi project assistant please", "intent": "greeting"}
+{"text": "hi project assistant today", "intent": "greeting"}
+{"text": "hi project assistant now", "intent": "greeting"}
+{"text": "hey can you help", "intent": "greeting"}
+{"text": "hey can you help please", "intent": "greeting"}
+{"text": "hey can you help today", "intent": "greeting"}
+{"text": "hey can you help now", "intent": "greeting"}
+{"text": "morning team assistant", "intent": "greeting"}
+{"text": "morning team assistant please", "intent": "greeting"}
+{"text": "morning team assistant today", "intent": "greeting"}
+{"text": "morning team assistant now", "intent": "greeting"}
+{"text": "help", "intent": "help"}
+{"text": "help please", "intent": "help"}
+{"text": "help now", "intent": "help"}
+{"text": "help quickly", "intent": "help"}
+{"text": "what can you do", "intent": "help"}
+{"text": "what can you do please", "intent": "help"}
+{"text": "what can you do now", "intent": "help"}
+{"text": "what can you do quickly", "intent": "help"}
+{"text": "show commands", "intent": "help"}
+{"text": "show commands please", "intent": "help"}
+{"text": "show commands now", "intent": "help"}
+{"text": "show commands quickly", "intent": "help"}
+{"text": "how to use this bot", "intent": "help"}
+{"text": "how to use this bot please", "intent": "help"}
+{"text": "how to use this bot now", "intent": "help"}
+{"text": "how to use this bot quickly", "intent": "help"}
+{"text": "need usage instructions", "intent": "help"}
+{"text": "need usage instructions please", "intent": "help"}
+{"text": "need usage instructions now", "intent": "help"}
+{"text": "need usage instructions quickly", "intent": "help"}
+{"text": "what options do i have", "intent": "help"}
+{"text": "what options do i have please", "intent": "help"}
+{"text": "what options do i have now", "intent": "help"}
+{"text": "what options do i have quickly", "intent": "help"}
+{"text": "list available commands", "intent": "help"}
+{"text": "list available commands please", "intent": "help"}
+{"text": "list available commands now", "intent": "help"}
+{"text": "list available commands quickly", "intent": "help"}
+{"text": "tell me how this works", "intent": "help"}
+{"text": "tell me how this works please", "intent": "help"}
+{"text": "tell me how this works now", "intent": "help"}
+{"text": "tell me how this works quickly", "intent": "help"}
+{"text": "assist me with commands", "intent": "help"}
+{"text": "assist me with commands please", "intent": "help"}
+{"text": "assist me with commands now", "intent": "help"}
+{"text": "assist me with commands quickly", "intent": "help"}
+{"text": "i need help with the chatbot", "intent": "help"}
+{"text": "i need help with the chatbot please", "intent": "help"}
+{"text": "i need help with the chatbot now", "intent": "help"}
+{"text": "i need help with the chatbot quickly", "intent": "help"}
+{"text": "thanks", "intent": "thanks"}
+{"text": "thanks so much", "intent": "thanks"}
+{"text": "thanks buddy", "intent": "thanks"}
+{"text": "thanks again", "intent": "thanks"}
+{"text": "thank you", "intent": "thanks"}
+{"text": "thank you so much", "intent": "thanks"}
+{"text": "thank you buddy", "intent": "thanks"}
+{"text": "thank you again", "intent": "thanks"}
+{"text": "thanks a lot", "intent": "thanks"}
+{"text": "thanks a lot so much", "intent": "thanks"}
+{"text": "thanks a lot buddy", "intent": "thanks"}
+{"text": "thanks a lot again", "intent": "thanks"}
+{"text": "many thanks", "intent": "thanks"}
+{"text": "many thanks so much", "intent": "thanks"}
+{"text": "many thanks buddy", "intent": "thanks"}
+{"text": "many thanks again", "intent": "thanks"}
+{"text": "appreciate it", "intent": "thanks"}
+{"text": "appreciate it so much", "intent": "thanks"}
+{"text": "appreciate it buddy", "intent": "thanks"}
+{"text": "appreciate it again", "intent": "thanks"}
+{"text": "thx", "intent": "thanks"}
+{"text": "thx so much", "intent": "thanks"}
+{"text": "thx buddy", "intent": "thanks"}
+{"text": "thx again", "intent": "thanks"}
+{"text": "thanks for the help", "intent": "thanks"}
+{"text": "thanks for the help so much", "intent": "thanks"}
+{"text": "thanks for the help buddy", "intent": "thanks"}
+{"text": "thanks for the help again", "intent": "thanks"}
+{"text": "that helps thanks", "intent": "thanks"}
+{"text": "that helps thanks so much", "intent": "thanks"}
+{"text": "that helps thanks buddy", "intent": "thanks"}
+{"text": "that helps thanks again", "intent": "thanks"}
+{"text": "great thank you", "intent": "thanks"}
+{"text": "great thank you so much", "intent": "thanks"}
+{"text": "great thank you buddy", "intent": "thanks"}
+{"text": "great thank you again", "intent": "thanks"}
+{"text": "awesome thanks", "intent": "thanks"}
+{"text": "awesome thanks so much", "intent": "thanks"}
+{"text": "awesome thanks buddy", "intent": "thanks"}
+{"text": "awesome thanks again", "intent": "thanks"}
+{"text": "goodbye", "intent": "goodbye"}
+{"text": "goodbye now", "intent": "goodbye"}
+{"text": "goodbye friend", "intent": "goodbye"}
+{"text": "goodbye for now", "intent": "goodbye"}
+{"text": "bye", "intent": "goodbye"}
+{"text": "bye now", "intent": "goodbye"}
+{"text": "bye friend", "intent": "goodbye"}
+{"text": "bye for now", "intent": "goodbye"}
+{"text": "see you later", "intent": "goodbye"}
+{"text": "see you later now", "intent": "goodbye"}
+{"text": "see you later friend", "intent": "goodbye"}
+{"text": "see you later for now", "intent": "goodbye"}
+{"text": "talk to you later", "intent": "goodbye"}
+{"text": "talk to you later now", "intent": "goodbye"}
+{"text": "talk to you later friend", "intent": "goodbye"}
+{"text": "talk to you later for now", "intent": "goodbye"}
+{"text": "bye for now", "intent": "goodbye"}
+{"text": "bye for now now", "intent": "goodbye"}
+{"text": "bye for now friend", "intent": "goodbye"}
+{"text": "bye for now for now", "intent": "goodbye"}
+{"text": "exit", "intent": "goodbye"}
+{"text": "exit now", "intent": "goodbye"}
+{"text": "exit friend", "intent": "goodbye"}
+{"text": "exit for now", "intent": "goodbye"}
+{"text": "quit", "intent": "goodbye"}
+{"text": "quit now", "intent": "goodbye"}
+{"text": "quit friend", "intent": "goodbye"}
+{"text": "quit for now", "intent": "goodbye"}
+{"text": "catch you later", "intent": "goodbye"}
+{"text": "catch you later now", "intent": "goodbye"}
+{"text": "catch you later friend", "intent": "goodbye"}
+{"text": "catch you later for now", "intent": "goodbye"}
+{"text": "i am done bye", "intent": "goodbye"}
+{"text": "i am done bye now", "intent": "goodbye"}
+{"text": "i am done bye friend", "intent": "goodbye"}
+{"text": "i am done bye for now", "intent": "goodbye"}
+{"text": "thanks goodbye", "intent": "goodbye"}
+{"text": "thanks goodbye now", "intent": "goodbye"}
+{"text": "thanks goodbye friend", "intent": "goodbye"}
+{"text": "thanks goodbye for now", "intent": "goodbye"}
