@@ -35,6 +35,7 @@ class Project(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     budget = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     spent = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+    equipe= models.CharField(max_length=255, blank=True)
     
     def __str__(self):
         return f"{self.name} (ID: {self.project_id})"
@@ -54,6 +55,8 @@ class Project(models.Model):
     
     class Meta:
         ordering = ['-created_date']
+    
+    equipe = models.CharField(max_length=255, blank=True)
 
 
 class ChatMessage(models.Model):
@@ -77,6 +80,8 @@ class ChatMessage(models.Model):
     
     class Meta:
         ordering = ['-timestamp']
+
+
 
 
 class ElixServiceCall(models.Model):
