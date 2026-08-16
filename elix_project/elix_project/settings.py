@@ -5,11 +5,18 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-your-secret-key-change-this-in-production'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-your-secret-key-change-this-in-production')
 
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'True').strip().lower() in {'1', 'true', 'yes', 'on'}
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        'ALLOWED_HOSTS',
+        'elix-chatbot.onrender.com,localhost,127.0.0.1',
+    ).split(',')
+    if host.strip()
+]
 
 # Application definition
 INSTALLED_APPS = [
