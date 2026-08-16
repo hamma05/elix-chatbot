@@ -1,37 +1,39 @@
 {% extends 'base.html' %}
 
 {% block title %}Login - Elix Chatbot{% endblock %}
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <div class="card shadow-lg">
-            <div class="card-body p-5">
-                <h2 class="text-center mb-4">🔐 Login</h2>
-                
-                <form method="post">
-                    {% csrf_token %}
-                    
-                    {% if form.errors %}
-                    <div class="alert alert-danger">
-                        <strong>Error:</strong> Invalid username or password.
-                    </div>
-                    {% endif %}
-                    
-                    <div class="mb-3">
-                        <label for="id_username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="id_username" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="id_password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="id_password"  required>                   
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
-                </form>
-                
-                
-            </div>
+
+{% block body %}
+<div class="flex-1 h-full flex items-center justify-center px-4">
+    <div class="w-full max-w-sm">
+        <div class="flex flex-col items-center mb-6">
+            <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">E</div>
+            <h1 class="font-headline-md text-headline-md text-primary mt-4">Elix Project Assistant</h1>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sign in to continue</p>
+        </div>
+
+        <div class="bg-surface-bright border border-outline-subtle rounded-2xl p-6 shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+            <form method="post">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <div class="bg-error-container border border-error rounded-lg px-4 py-3 mb-4">
+                    <p class="font-body-sm text-body-sm text-on-error-container">Invalid username or password.</p>
+                </div>
+                {% endif %}
+
+                <label for="id_username" class="block font-label-md text-label-md text-on-surface-variant mb-1">Username</label>
+                <input type="text" name="username" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0 mb-4" id="id_username" autocomplete="username" required>
+
+                <label for="id_password" class="block font-label-md text-label-md text-on-surface-variant mb-1">Password</label>
+                <input type="password" name="password" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0 mb-6" id="id_password" autocomplete="current-password" required>
+
+                <button type="submit" class="w-full font-label-md text-label-md text-on-primary bg-gradient-to-r from-[#712ae2] to-[#3980f4] rounded-lg py-2.5 hover:opacity-90 transition-opacity">Login</button>
+            </form>
+
+            <p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-4">
+                Don't have an account?
+                <a href="{% url 'register' %}" class="text-secondary">Register here</a>
+            </p>
         </div>
     </div>
 </div>

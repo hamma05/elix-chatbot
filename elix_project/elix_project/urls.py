@@ -13,6 +13,7 @@ urlpatterns = [
     # Authentication URLs
     path('login/', chatbot_views.login_view, name='login'),
     path('logout/', chatbot_views.logout_view, name='logout'),
+    path('register/', chatbot_views.register_view, name='register'),
     
     # Chatbot URLs
     path('', include('chatbot.urls')),

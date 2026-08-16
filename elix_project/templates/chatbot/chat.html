@@ -2,129 +2,63 @@
 
 {% block title %}Chat - Elix Chatbot{% endblock %}
 
-{% block extra_css %}
-<style>
-    .chat-container {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-    }
+{% block content %}
+<div id="chatMessages" class="flex flex-col gap-stack-gap">
+    <!-- Welcome Assistant Message -->
+    <div class="message bot flex items-start gap-4">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+            E
+        </div>
+        <div class="bg-surface-bright border border-outline-subtle rounded-2xl rounded-tl-sm p-6 shadow-[0px_4px_24px_rgba(0,0,0,0.04)] max-w-3xl">
+            <h2 class="font-headline-sm text-headline-sm text-primary mb-4">Welcome! I can help you with:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <!-- Capability Cards -->
+                <div class="capability-card bg-surface-container-low border border-outline-subtle rounded-xl p-4 hover:border-secondary transition-colors cursor-pointer group" data-query="list all projects">
+                    <span class="material-symbols-outlined text-secondary mb-3 text-2xl group-hover:scale-110 transition-transform">list_alt</span>
+                    <p class="font-body-sm text-body-sm text-on-surface">List all active projects and their status</p>
+                </div>
+                <div class="capability-card bg-surface-container-low border border-outline-subtle rounded-xl p-4 hover:border-secondary transition-colors cursor-pointer group" data-query="search project">
+                    <span class="material-symbols-outlined text-secondary mb-3 text-2xl group-hover:scale-110 transition-transform">manage_search</span>
+                    <p class="font-body-sm text-body-sm text-on-surface">Search for specific projects by client or date</p>
+                </div>
+                <div class="capability-card bg-surface-container-low border border-outline-subtle rounded-xl p-4 hover:border-secondary transition-colors cursor-pointer group" data-query="generate report">
+                    <span class="material-symbols-outlined text-secondary mb-3 text-2xl group-hover:scale-110 transition-transform">summarize</span>
+                    <p class="font-body-sm text-body-sm text-on-surface">Generate a quick progress report</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    .chat-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 20px;
-        border-radius: 10px 10px 0 0;
-    }
-
-    .chat-messages {
-        flex: 1;
-        overflow-y: auto;
-        padding: 20px;
-        background: #f8f9fa;
-    }
-
-    .message {
-        margin-bottom: 15px;
-        display: flex;
-    }
-
-    .message.user {
-        justify-content: flex-end;
-    }
-
-    .message.bot {
-        justify-content: flex-start;
-    }
-
-    .message-bubble {
-        max-width: 70%;
-        padding: 12px 18px;
-        border-radius: 18px;
-        word-wrap: break-word;
-        white-space: pre-wrap;
-    }
-
-    .message.user .message-bubble {
-        background: #667eea;
-        color: white;
-    }
-
-    .message.bot .message-bubble {
-        background: white;
-        color: #333;
-        border: 1px solid #ddd;
-    }
-
-    .chat-input-container {
-        padding: 20px;
-        background: white;
-        border-radius: 0 0 10px 10px;
-        border-top: 1px solid #ddd;
-    }
-
-    .typing-indicator {
-        display: none;
-        padding: 10px 20px;
-        color: #666;
-        font-style: italic;
-    }
-</style>
+<div id="typingIndicator" class="hidden items-start gap-4">
+    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold">E</div>
+    <div class="bg-surface-bright border border-outline-subtle rounded-2xl rounded-tl-sm px-5 py-3 shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+        <span class="font-body-sm text-body-sm text-on-surface-variant">Elix is typing...</span>
+    </div>
+</div>
 {% endblock %}
 
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-10">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h3 class="mb-1">Elix Project Assistant</h3>
-                <p class="mb-0">Ask me about your projects!</p>
-                <small>{{ total_projects }} projects | {{ active_projects }} active</small>
+{% block dock %}
+<!-- Input Area Bottom -->
+<div class="relative w-full bg-surface/95 backdrop-blur-sm border-t border-outline-subtle px-8 py-6 z-30">
+    <div class="max-w-[chat-max-width] mx-auto relative">
+        <form id="chatForm" class="bg-surface-bright border border-outline-subtle rounded-xl p-2 pr-4 shadow-[0px_4px_24px_rgba(0,0,0,0.08)] flex items-end min-h-[60px]">
+            <button type="button" class="p-2 text-on-surface-variant hover:text-primary transition-colors flex-shrink-0" title="Attach file">
+                <span class="material-symbols-outlined">attach_file</span>
+            </button>
+            <textarea id="messageInput" class="flex-1 bg-transparent border-none focus:ring-0 resize-none max-h-32 py-3 px-2 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant" placeholder="Ask me about projects, reports, or tasks..." rows="1"></textarea>
+            <div class="flex items-center gap-2 mb-2 ml-2">
+                <span class="font-label-sm text-label-sm text-on-surface-variant hidden md:inline-block px-2 py-1 bg-surface-container-low rounded">Enter ↵</span>
+                <button type="submit" class="w-8 h-8 rounded text-on-primary flex items-center justify-center hover:bg-on-surface transition-colors flex-shrink-0 shadow-sm bg-gradient-to-r from-[#712ae2] to-[#3980f4]" title="Send">
+                    <span class="material-symbols-outlined" style="font-size: 18px;">arrow_upward</span>
+                </button>
             </div>
-
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot">
-                    <div class="message-bubble">
-                        Welcome! I can help you with:
-
-- List all projects
-- Search for specific projects
-- Generate project reports
-- Check project status
-- Find projects by owner
-
-Try: "list all projects" or "show projects of E-Commerce Platform"
-                    </div>
-                </div>
-
-                {% for msg in recent_messages reversed %}
-                <div class="message user">
-                    <div class="message-bubble">{{ msg.user_message }}</div>
-                </div>
-                <div class="message bot">
-                    <div class="message-bubble">{{ msg.bot_response }}</div>
-                </div>
-                {% endfor %}
-            </div>
-
-            <div class="typing-indicator" id="typingIndicator">Bot is typing...</div>
-
-            <div class="chat-input-container">
-                <form id="chatForm" class="d-flex gap-2">
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="messageInput"
-                        placeholder="Type your message here..."
-                        autocomplete="off"
-                        required
-                    >
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
-            </div>
+        </form>
+        <!-- Footer Info -->
+        <div class="text-center mt-3">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">
+                © 2024 Elix Project Assistant. Professional Workstation Mode.
+            </p>
         </div>
     </div>
 </div>
@@ -136,25 +70,45 @@ Try: "list all projects" or "show projects of E-Commerce Platform"
     const chatForm = document.getElementById('chatForm');
     const messageInput = document.getElementById('messageInput');
     const typingIndicator = document.getElementById('typingIndicator');
+    const scrollContainer = document.querySelector('main');
     const BOT_LINE_DELAY_MS = 280;
     const BOT_START_DELAY_MS = 180;
 
     function scrollToBottom() {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
     }
 
     function sleep(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
-    async function addMessage(message, isUser = false) {
+    function createMessage(message, isUser = false) {
         const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+
+        if (isUser) {
+            messageDiv.className = 'message user flex justify-end';
+        } else {
+            messageDiv.className = 'message bot flex items-start gap-4';
+            const avatar = document.createElement('div');
+            avatar.className = 'w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-bold shadow-[0px_4px_24px_rgba(0,0,0,0.04)]';
+            avatar.textContent = 'E';
+            messageDiv.appendChild(avatar);
+        }
 
         const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'message-bubble';
+        if (isUser) {
+            bubbleDiv.className = 'message-bubble bg-secondary text-on-secondary rounded-2xl rounded-tr-sm px-5 py-3 max-w-[70%] shadow-[0px_4px_24px_rgba(0,0,0,0.04)] whitespace-pre-wrap break-words';
+        } else {
+            bubbleDiv.className = 'message-bubble bg-surface-bright border border-outline-subtle rounded-2xl rounded-tl-sm px-5 py-3 max-w-[70%] shadow-[0px_4px_24px_rgba(0,0,0,0.04)] whitespace-pre-wrap break-words';
+        }
         messageDiv.appendChild(bubbleDiv);
+
         chatMessages.appendChild(messageDiv);
+        return bubbleDiv;
+    }
+
+    async function addMessage(message, isUser = false) {
+        const bubbleDiv = createMessage(message, isUser);
 
         if (isUser) {
             bubbleDiv.textContent = message;
@@ -175,16 +129,14 @@ Try: "list all projects" or "show projects of E-Commerce Platform"
         scrollToBottom();
     }
 
-    chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const message = messageInput.value.trim();
-        if (!message) return;
-
+    async function sendMessage(message) {
         await addMessage(message, true);
         messageInput.value = '';
+        messageInput.style.height = 'auto';
+        messageInput.placeholder = 'Ask me about projects, reports, or tasks...';
 
-        typingIndicator.style.display = 'block';
+        typingIndicator.classList.remove('hidden');
+        typingIndicator.classList.add('flex');
         scrollToBottom();
 
         try {
@@ -197,7 +149,8 @@ Try: "list all projects" or "show projects of E-Commerce Platform"
             });
 
             const data = await response.json();
-            typingIndicator.style.display = 'none';
+            typingIndicator.classList.add('hidden');
+            typingIndicator.classList.remove('flex');
 
             if (data.error) {
                 await addMessage(`Error: ${data.error}`, false);
@@ -206,9 +159,47 @@ Try: "list all projects" or "show projects of E-Commerce Platform"
             }
 
         } catch (error) {
-            typingIndicator.style.display = 'none';
+            typingIndicator.classList.add('hidden');
+            typingIndicator.classList.remove('flex');
             await addMessage(`Error: ${error.message}`, false);
         }
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        sendMessage(message);
+    });
+
+    messageInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            chatForm.requestSubmit();
+        }
+    });
+
+    messageInput.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+        if (this.value === '') {
+            this.style.height = 'auto';
+        }
+    });
+
+    document.querySelectorAll('.capability-card').forEach((card) => {
+        card.addEventListener('click', () => {
+            const query = card.dataset.query;
+            if (query) {
+                sendMessage(query);
+                return;
+            }
+            messageInput.value = 'search project ';
+            messageInput.focus();
+            messageInput.setSelectionRange(messageInput.value.length, messageInput.value.length);
+        });
     });
 
     scrollToBottom();

@@ -39,6 +39,20 @@ def logout_view(request):
     return redirect("login")
 
 
+def register_view(request):
+    """User registration page."""
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("chat")
+    else:
+        form = UserCreationForm()
+
+    return render(request, "registration/register.html", {"form": form})
+
+
 @login_required
 def chat_view(request):
     """Main chat interface."""

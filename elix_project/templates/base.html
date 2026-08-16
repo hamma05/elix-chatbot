@@ -1,66 +1,167 @@
 ﻿{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Elix Chatbot{% endblock %}</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e7e8e9",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1b1b1b",
+                        "tertiary-fixed-dim": "#aec6ff",
+                        "elix-gradient": "linear-gradient(135deg, #712ae2 0%, #3980f4 100%)",
+                        "outline-subtle": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4c4546",
+                        "outline-variant": "#cfc4c5",
+                        "surface-tint": "#5e5e5e",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#712ae2",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000000",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-container": "#3980f4",
+                        "tertiary-container": "#001a42",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "inverse-primary": "#c6c6c6",
+                        "on-background": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#fffbff",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed": "#d8e2ff",
+                        "secondary-container": "#8b4bfc",
+                        "secondary-fixed": "#eaddff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-container": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary-container": "#848484",
+                        "on-primary-fixed-variant": "#474747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "280px",
+                        "chat-max-width": "840px",
+                        "container-padding": "2rem",
+                        "gutter-base": "1rem",
+                        "margin-desktop": "2.5rem",
+                        "stack-gap": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .main-container {
-            padding-top: 2rem;
-        }
-        .navbar-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .navbar-logo {
-            width: 70px;
-            height: 35px;
-            object-fit: contain;
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-    
+
     {% block extra_css %}{% endblock %}
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'chat' %}">
-                <img class="navbar-logo" src="{% static 'images/elix.png' %}" alt="Elix logo">
-                <span>Chatbot</span>
-            </a>
-            
-            {% if user.is_authenticated %}
-            <div class="navbar-nav ms-auto">
-                <span class="navbar-text text-white me-3">
-                    Welcome, {{ user.username }}
+<body class="bg-surface text-on-surface font-body-md h-screen w-full overflow-hidden flex">
+    {% block body %}
+    <div class="flex-1 flex flex-col h-full relative">
+        {% block header %}
+        <header class="fixed top-0 right-0 h-16 bg-surface border-b border-outline-subtle flex justify-between items-center px-8 z-40 w-full">
+            <div class="flex items-center gap-4">
+                <a href="{% url 'chat' %}" class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">E</div>
+                    <span class="font-headline-sm text-headline-sm text-primary">Elix Project Assistant</span>
+                </a>
+                {% if user.is_authenticated %}
+                <span class="font-label-sm text-label-sm text-on-surface-variant hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded-full border border-outline-subtle">
+                    <span class="material-symbols-outlined" style="font-size:14px;">folder</span>
+                    {{ total_projects }} projects | {{ active_projects }} active
                 </span>
-                <a class="btn btn-outline-light btn-sm" href="{% url 'logout' %}">Logout</a>
+                {% endif %}
             </div>
-            {% endif %}
-        </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <div class="container main-container">
-        {% block content %}{% endblock %}
+
+            <div class="flex items-center space-x-4">
+                {% if user.is_authenticated %}
+                <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center border border-outline-subtle font-label-md text-label-md" title="{{ user.username }}">{{ user.username|first|upper }}</div>
+                <a href="{% url 'logout' %}" class="text-on-surface-variant hover:bg-surface-container rounded-full p-2 transition-all duration-200" title="Logout">
+                    <span class="material-symbols-outlined">logout</span>
+                </a>
+                {% else %}
+                <a href="{% url 'login' %}" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Login</a>
+                <a href="{% url 'register' %}" class="font-label-md text-label-md text-on-primary bg-gradient-to-r from-[#712ae2] to-[#3980f4] rounded-lg px-4 py-2 hover:opacity-90 transition-opacity">Register</a>
+                {% endif %}
+            </div>
+        </header>
+        {% endblock %}
+
+        {% block main %}
+        <main class="flex-1 overflow-y-auto pt-24 pb-8 px-8 flex justify-center">
+            <div class="w-full max-w-[chat-max-width] flex flex-col gap-stack-gap">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        {% endblock %}
+
+        {% block dock %}{% endblock %}
     </div>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    {% block extra_js %}
-  
     {% endblock %}
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

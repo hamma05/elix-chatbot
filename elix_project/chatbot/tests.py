@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 from unittest import skipUnless
 from unittest.mock import patch
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.management.base import CommandError
@@ -73,9 +74,27 @@ class ChatbotNLUTests(TestCase):
         self.assertEqual(parsed_owner["intent"], "search_by_owner")
         self.assertEqual(parsed_owner["entities"]["owner"], "Sarah Johnson")# type: ignore[union-attr]
 
+    @override_settings(NLU_ENGINE="rules")
+    def test_bare_entity_names_resolve_to_supported_intents(self):
+        nlu = ChatbotNLU()
+
+        parsed_project = nlu.parse_intent("mobile banking app")
+        self.assertEqual(parsed_project["intent"], "search_project")
+        self.assertEqual(parsed_project["entities"]["project"], "Mobile Banking App")
+
+        shown = nlu.parse_intent("show me marketing automation")
+        self.assertEqual(shown["intent"], "search_project")
+        self.assertEqual(shown["entities"]["project"], "Marketing Automation")
+
+        parsed_owner = nlu.parse_intent("sarah hamdi")
+        self.assertEqual(parsed_owner["intent"], "search_by_owner")
+        self.assertEqual(parsed_owner["entities"]["owner"], "Sarah Hamdi")
+
     @override_settings(
         NLU_ENGINE="ml",
-        NLU_MODEL_PATH="D:/elix-chatbot/elix_project/chatbot/nlu_models/intent_en_v1.joblib",
+        NLU_MODEL_PATH=str(
+            settings.BASE_DIR / "chatbot" / "nlu_models" / "does_not_exist.joblib"
+        ),
         NLU_ENABLE_RULES_FALLBACK=True,
     )
     def test_missing_ml_model_uses_rules_fallback(self):

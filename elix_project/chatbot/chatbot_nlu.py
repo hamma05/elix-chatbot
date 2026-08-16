@@ -208,6 +208,8 @@ class ChatbotNLU:
 
         rule_intent, rule_confidence = self._predict_intent_rules(normalized_message)
         entities = self._enrich_entities_for_intent(rule_intent, normalized_message, entities)
+        if rule_intent == "unknown":
+            rule_intent, rule_confidence = self._search_rescue(normalized_message, entities)
         return self._build_result(
             intent=rule_intent,
             confidence=rule_confidence,
@@ -343,6 +345,24 @@ class ChatbotNLU:
             enriched["owner"] = self.resolve_owner_name(message)
 
         return enriched
+
+    def _search_rescue(
+        self,
+        message: str,
+        entities: Dict[str, Optional[str]],
+    ) -> Tuple[str, float]:
+        """Classify an otherwise-unknown message as a search when it matches a known entity."""
+        if not entities.get("project"):
+            entities["project"] = self.resolve_project_name(message)
+        if entities.get("project"):
+            return "search_project", 0.6
+
+        if not entities.get("owner"):
+            entities["owner"] = self.resolve_owner_name(message)
+        if entities.get("owner"):
+            return "search_by_owner", 0.6
+
+        return "unknown", 0.0
 
     def _clean_entity_value(self, value: str) -> Optional[str]:
         cleaned = re.sub(r"[^a-z0-9\s&'/-]", " ", value.lower())

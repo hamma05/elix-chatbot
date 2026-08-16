@@ -2,51 +2,46 @@
 
 {% block title %}Register - Elix Chatbot{% endblock %}
 
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <div class="card shadow-lg">
-            <div class="card-body p-5">
-                <h2 class="text-center mb-4">📝 Register</h2>
-                
-                <form method="post">
-                    {% csrf_token %}
-                    
-                    {% if form.errors %}
-                    <div class="alert alert-danger">
-                        {% for field, errors in form.errors.items %}
-                            {% for error in errors %}
-                                <div>{{ error }}</div>
-                            {% endfor %}
+{% block body %}
+<div class="flex-1 h-full flex items-center justify-center px-4">
+    <div class="w-full max-w-sm">
+        <div class="flex flex-col items-center mb-6">
+            <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">E</div>
+            <h1 class="font-headline-md text-headline-md text-primary mt-4">Create your account</h1>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Join Elix Project Assistant</p>
+        </div>
+
+        <div class="bg-surface-bright border border-outline-subtle rounded-2xl p-6 shadow-[0px_4px_24px_rgba(0,0,0,0.04)]">
+            <form method="post">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <div class="bg-error-container border border-error rounded-lg px-4 py-3 mb-4">
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <p class="font-body-sm text-body-sm text-on-error-container">{{ error }}</p>
                         {% endfor %}
-                    </div>
-                    {% endif %}
-                    
-                    <div class="mb-3">
-                        <label for="id_username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="id_username" required>
-                        <small class="form-text text-muted">150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="id_password1" class="form-label">Password</label>
-                        <input type="password" name="password1" class="form-control" id="id_password1" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="id_password2" class="form-label">Confirm Password</label>
-                        <input type="password" name="password2" class="form-control" id="id_password2" required>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
-                </form>
-                
-                <div class="text-center">
-                    <p class="mb-0">Already have an account? 
-                        <a href="{% url 'login' %}">Login here</a>
-                    </p>
+                    {% endfor %}
                 </div>
-            </div>
+                {% endif %}
+
+                <label for="id_username" class="block font-label-md text-label-md text-on-surface-variant mb-1">Username</label>
+                <input type="text" name="username" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0 mb-1" id="id_username" autocomplete="username" required>
+                <p class="font-label-sm text-label-sm text-on-surface-variant mb-4">150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+
+                <label for="id_password1" class="block font-label-md text-label-md text-on-surface-variant mb-1">Password</label>
+                <input type="password" name="password1" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0 mb-4" id="id_password1" autocomplete="new-password" required>
+
+                <label for="id_password2" class="block font-label-md text-label-md text-on-surface-variant mb-1">Confirm Password</label>
+                <input type="password" name="password2" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary focus:ring-0 mb-6" id="id_password2" autocomplete="new-password" required>
+
+                <button type="submit" class="w-full font-label-md text-label-md text-on-primary bg-gradient-to-r from-[#712ae2] to-[#3980f4] rounded-lg py-2.5 hover:opacity-90 transition-opacity">Register</button>
+            </form>
+
+            <p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-4">
+                Already have an account?
+                <a href="{% url 'login' %}" class="text-secondary">Login here</a>
+            </p>
         </div>
     </div>
 </div>
